@@ -5,7 +5,10 @@ using namespace std;
 bool checkInput(string str){
     bool check = false;
     for(int i = 0; i < str.length(); i++){
-        if (str[i] == 'O' || str[i] == 'X' || str[i] == '.') check = true;
+        if (str[i] == 'O') check = true;
+        else if(str[i] == 'X') check = true;
+        else if(str[i] == '.') check = true;
+        else check = false;
     }
     return check;
 }
@@ -77,6 +80,8 @@ int main() {
     cout << "Enter 3 strings: " << std::endl;
     cin >> str1 >> str2 >> str3;
     str = str1 + str2 + str3;
+
+    cout << str << endl;
 
     countO = countSymbols(str, 'O');
     countX = countSymbols(str, 'X');
