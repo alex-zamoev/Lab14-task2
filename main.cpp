@@ -3,14 +3,12 @@
 using namespace std;
 
 bool checkInput(string str){
-    bool check = false;
-    for(int i = 0; i < str.length(); i++){
-        if (str[i] == 'O') check = true;
-        else if(str[i] == 'X') check = true;
-        else if(str[i] == '.') check = true;
-        else check = false;
+    for (int i = 0; i < str.length(); i++)
+    {
+        if (str[i] != 'O' && str[i] != 'X' && str[i] != '.')
+            return false;
     }
-    return check;
+    return true;
 }
 
 bool checkLength(string str){
